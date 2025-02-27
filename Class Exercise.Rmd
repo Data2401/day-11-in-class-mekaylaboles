@@ -1,0 +1,27 @@
+---
+title: "Class Exercise"
+output: html_document
+date: "2025-02-27"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+install.packages("palmerpenguins")
+library(palmerpenguins)
+```
+
+```{r}
+firstfour <- c(25,34,23,24)
+scored_against <- c(26,34,37,34)
+
+games <- data.frame(firstfour, scored_against)  
+diff <-(firstfour - scored_against)
+games$diff <- diff
+games$won <- games$diff > 0
+opponent <- c("A","B","C","D")
+games$opponent <- opponent
+view(games)
+```
+
+
